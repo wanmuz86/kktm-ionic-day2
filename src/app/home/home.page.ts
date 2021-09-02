@@ -15,8 +15,16 @@ export class HomePage implements OnInit {
   // When the page is loaded, I will retrive data from the service
 
   ngOnInit(){
-    this.todoList = this.localService.readAllItems()
+   
+    console.log("here ngOnInit")
 
   }
+
+  ionViewWillEnter(){
+    this.todoList = this.localService.readAllItems()
+    console.log("here ionViewWillEnter")
+    console.log(this.todoList)
+  }
+
 
 }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -8,5 +8,18 @@
 </ion-header>
 
 <ion-content>
-  <p>This is the page for item of id {{id}}</p>
+  <ion-card *ngIf="todoItem">
+    <img [src]="todoItem.imageUrl" />
+    <ion-card-header>
+      <ion-card-subtitle>Thing to do</ion-card-subtitle>
+      <ion-card-title>{{todoItem.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{todoItem.location}}
+    </ion-card-content>
+    <p style="text-align:center">
+      <ion-button fill="outline" color="danger" (click)="deleteItem()">Delete Item</ion-button>
+    </p>
+  </ion-card>
+ 
 </ion-content>
